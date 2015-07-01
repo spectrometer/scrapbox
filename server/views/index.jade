@@ -1,7 +1,6 @@
-doctype
+extends ../includes/layout
 
-html
-	head
-//		link(href="/favicon.ico", rel="shortcut icon", type="image/x-icon")
-	body
-		h1 soup nuts
+block main-content
+	section.content
+		div(ng-view)
+	h2= mongoMessage
