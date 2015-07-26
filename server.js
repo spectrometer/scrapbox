@@ -47,6 +47,7 @@ Message.findOne().exec(function(err, messageDoc) {
 	console.log(mongoMessage);
 });
 
+
 //routes
 app.get('/partials/:partialPath', function(req, res) {
 	res.render('partials/' + req.params.partialPath);
