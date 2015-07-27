@@ -24,8 +24,8 @@ app.use(stylus.middleware(
 		compile: compile
 	}
 ));
-app.use(express.static(__dirname + '/public')); //static route handling setup - serve any files in /public
 
+app.use(express.static(__dirname + '/public')); //static route handling setup - serve any files in /public
 
 if(env === 'development') {
 	mongoose.connect('mongodb://localhost/scrapbox');
@@ -38,15 +38,6 @@ db.on('error', console.error.bind(console, 'connection error...'));
 db.once('open', function callback() {
 	console.log('access to scrapbox db established');
 });
-
-var messageSchema = mongoose.Schema({message: String});
-var Message = mongoose.model('Message', messageSchema);
-var mongoMessage;
-Message.findOne().exec(function(err, messageDoc) {
-	mongoMessage = messageDoc.message;
-	console.log(mongoMessage);
-});
-
 
 //routes
 app.get('/partials/:partialPath', function(req, res) {
@@ -64,5 +55,4 @@ var server = app.listen(port, function() {
 	var port = server.address().port;
 
 	console.log('scrapbox currently listening at http://%s:%s', host, port);
-
 });

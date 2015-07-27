@@ -1,0 +1,5 @@
+.panel.panel-primary
+   .panel-heading.text-center Recent Submissions
+   .panel-body
+      .row(ng-repeat="submission in submissions | filter:{visible:true}")
+         .col-md-12 {{submission.title}}

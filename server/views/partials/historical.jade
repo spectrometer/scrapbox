@@ -1,0 +1,6 @@
+.panel.panel-primary
+   .panel-heading.text-center Historical Submissions
+   .panel-body
+      .row(ng-repeat="submission in submissions | orderBy:'date':true | limitTo:10")
+         .col-md-3 {{submission.visible | date:'MMM d'}}
+         .col-md-9 {{submission.title}}

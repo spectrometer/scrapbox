@@ -1,0 +1,1 @@
+<div class="panel panel-primary"><div class="panel-heading text-center">Historical Submissions</div><div class="panel-body"><div ng-repeat="submission in submissions | orderBy:'date':true | limitTo:10" class="row"><div class="col-md-3">{{submission.visible | date:'MMM d'}}</div><div class="col-md-9">{{submission.title}}</div></div></div></div>

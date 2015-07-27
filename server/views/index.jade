@@ -1,6 +1,18 @@
 extends ../includes/layout
 
 block main-content
+	.navbar.navbar-inverse.navbar-fixed-top
+		.container
+			.navbar-header
+				a.navbar-brand(href="/") scrapbox
+					h6 community nest
+			.navbar-collapse.collapse
+				ul.nav.navbar-nav
+					li
+						a(href="/") home
+				div(ng-include="'/partials/loginStrip'")
 	section.content
 		div(ng-view)
-	h2= mongoMessage
+
+	footer.container.text-center
+		p &copy; 2015 steely glint llc
